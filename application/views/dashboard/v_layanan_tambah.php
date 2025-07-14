@@ -44,6 +44,15 @@
                                         <?php echo form_error('deskripsi'); ?>
                                     </div>
 
+									<div class="form-group">
+										<label>Status</label>
+										<select name="status" class="form-control">
+											<option value="0">Draft</option>
+											<option value="1">Publish</option>
+										</select>
+										<br>
+									</div>
+
                                     <div class="form-group">
                                         <label>Gambar</label>
                                         <input type="file" name="gambar" class="form-control">

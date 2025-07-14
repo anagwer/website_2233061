@@ -46,6 +46,15 @@
                                         <br>
                                     </div>
 
+									<div class="form-group">
+										<label>Status</label>
+										<select name="status" class="form-control">
+											<option value="0" <?= ($layanan[0]->status == 0) ? 'selected' : '' ?>>Draft</option>
+											<option value="1" <?= ($layanan[0]->status == 1) ? 'selected' : '' ?>>Publish</option>
+										</select>
+										<br>
+									</div>
+
                                     <div class="form-group">
                                         <label>Gambar Saat Ini</label><br>
                                         <?php if ($layanan[0]->gambar): ?>

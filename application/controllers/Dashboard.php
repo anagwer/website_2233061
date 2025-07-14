@@ -903,6 +903,7 @@ public function layanan() {
         if ($this->form_validation->run() != FALSE) {
             $nama = $this->input->post('nama');
             $deskripsi = $this->input->post('deskripsi');
+            $status = $this->input->post('status');
             $tanggal = date('Y-m-d H:i:s');
 			$author  = $this->session->userdata('id');
 
@@ -923,7 +924,8 @@ public function layanan() {
                 'deskripsi' => $deskripsi,
                 'tanggal' => $tanggal,
                 'id_user' => $author,
-                'gambar' => $gambar
+                'gambar' => $gambar,
+				'status' => $status
             );
 
             $this->m_data->insert_data('layanan', $data);
@@ -952,6 +954,7 @@ public function layanan() {
             $id = $this->input->post('id');
             $nama = $this->input->post('nama');
             $deskripsi = $this->input->post('deskripsi');
+            $status = $this->input->post('status');
             $tanggal = date('Y-m-d H:i:s');
 			$author  = $this->session->userdata('id');
 
@@ -980,7 +983,9 @@ public function layanan() {
                 'tanggal' => $tanggal,
                 'id_user' => $author,
                 'deskripsi' => $deskripsi,
-                'gambar' => $gambar_baru
+                'gambar' => $gambar_baru,
+                'status' => $status,
+
             );
 
             $this->m_data->update_data('layanan', $data, $where);

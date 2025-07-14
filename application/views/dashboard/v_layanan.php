@@ -36,6 +36,7 @@
                                         <th>Nama</th>
                                         <th>Penanggung Jawab</th>
                                         <th>Deskripsi</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,11 @@
                                             <td><?= htmlspecialchars($l->nama) ?></td>
                                             <td><?= htmlspecialchars($l->pengguna_nama) ?></td>
                                             <td><?= htmlspecialchars($l->deskripsi) ?></td>
+                                            <td><?php if($l->status=='0'){
+												echo 'Draft';
+											}else{
+												echo 'Publish';
+											} ?></td>
                                             
                                             <td>
                                                 <a href="<?= base_url('dashboard/layanan_edit/' . $l->id) ?>">

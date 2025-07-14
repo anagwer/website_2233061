@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2025 at 05:55 AM
+-- Generation Time: Jul 14, 2025 at 06:51 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -109,15 +109,16 @@ CREATE TABLE `layanan` (
   `nama` varchar(255) NOT NULL,
   `deskripsi` text DEFAULT NULL,
   `gambar` text DEFAULT NULL,
-  `tanggal` datetime NOT NULL
+  `tanggal` datetime NOT NULL,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `layanan`
 --
 
-INSERT INTO `layanan` (`id`, `id_user`, `nama`, `deskripsi`, `gambar`, `tanggal`) VALUES
-(1, 5, 'Order Delivery', 'kami akan mengantarkan pesanan anda', 'Jemput_paket_Gratis.png', '2025-07-14 10:01:23');
+INSERT INTO `layanan` (`id`, `id_user`, `nama`, `deskripsi`, `gambar`, `tanggal`, `status`) VALUES
+(1, 5, 'Order Delivery', 'kami akan mengantarkan pesanan anda', 'Jemput_paket_Gratis.png', '2025-07-14 11:51:20', 1);
 
 -- --------------------------------------------------------
 
@@ -288,7 +289,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pengguna`

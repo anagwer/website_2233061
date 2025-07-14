@@ -29,6 +29,7 @@ class Welcome extends CI_Controller {
 
 		$data['layanan'] = $this->db->query("
 			SELECT * FROM layanan
+			WHERE status='1'
 			LIMIT 6
 			")->result();
 
@@ -62,12 +63,12 @@ class Welcome extends CI_Controller {
         AND artikel_slug = '$slug'
     ")->result();
     $data['portofolio'] = $this->db->query("
-  SELECT * FROM portofolio
-  JOIN pengguna ON portofolio.portofolio_author = pengguna.pengguna_id
-  WHERE portofolio_status = 'publish'
-  ORDER BY portofolio_id DESC
-  LIMIT 3
-")->result();
+		SELECT * FROM portofolio
+		JOIN pengguna ON portofolio.portofolio_author = pengguna.pengguna_id
+		WHERE portofolio_status = 'publish'
+		ORDER BY portofolio_id DESC
+		LIMIT 3
+		")->result();
 
     // Ambil data pengaturan website
     $data['pengaturan'] = $this->m_data->get_data('pengaturan')->row();
@@ -397,13 +398,13 @@ public function portofolio_detail($slug)
 }
 public function layanan()
     {
-				$data['pengaturan'] = $this->m_data->get_data('pengaturan')->row();
-				$data['meta_keyword'] = $data['pengaturan']->nama;
-				$data['meta_description'] = $data['pengaturan']->deskripsi;
+		$data['pengaturan'] = $this->m_data->get_data('pengaturan')->row();
+		$data['meta_keyword'] = $data['pengaturan']->nama;
+		$data['meta_description'] = $data['pengaturan']->deskripsi;
 
         $data['layanan'] = $this->db->query(
             'SELECT * FROM layanan, pengguna 
-             WHERE id_user=pengguna_id 
+             WHERE id_user=pengguna_id and status=1
              ORDER BY id DESC'
         )->result();
 
