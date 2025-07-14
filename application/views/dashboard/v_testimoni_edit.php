@@ -53,7 +53,6 @@
 									<option value="1" <?= ($testimoni[0]->status == 1) ? 'selected' : '' ?>>ACC</option>
 								</select>
 								<br>
-								<?= form_error('testi'); ?>
 							</div>
 
                             <!-- Gambar -->
